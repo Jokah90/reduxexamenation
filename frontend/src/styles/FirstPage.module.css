@@ -1,0 +1,40 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    position: relative;
+  }
+  
+  .gridItemLeft {
+    grid-column: 1;
+  }
+  
+  .gridItem {
+    position: absolute;
+    padding: 59px;
+    margin-top: 205px;
+  }
+  
+  .gridItemRight {
+    grid-column: 3;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    position: relative;
+    background: #38846D;
+  }
+  
+  .gridItemLeft {
+    grid-column: 1;
+  }
+  
+  .gridItem {
+    position: absolute;
+    padding: 59px;
+    margin-top: 205px;
+  }
+  
+  .gridItemRight {
+    grid-column: 3;
+  }
+  
