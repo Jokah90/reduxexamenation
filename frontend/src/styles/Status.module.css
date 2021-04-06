@@ -1,0 +1,46 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #e5674e;
+}
+
+h1 {
+  width: 279px;
+  height: 125px;
+  left: 48px;
+  top: 299px;
+  font-family: PT Serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 120%;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+}
+
+.wrapper p {
+  width: 279px;
+  height: 37px;
+  left: 48px;
+  top: 62px;
+  font-family: Work Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 120%;
+  align-items: center;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.btn {
+  width: 184px;
+  height: 55px;
+  left: 98px;
+  top: 530px;
+  background: #ffffff;
+  border-radius: 50px;
+}

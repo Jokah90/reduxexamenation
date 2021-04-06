@@ -9,8 +9,11 @@ import itemReducer from './redux/itemReducers';
 
 
 //creating my store
-const store = createStore(itemReducer);
-
+// const store = createStore(itemReducer);
+const store = createStore(
+  itemReducer, /* preloadedState, */
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 //Envelop my app.js with the provider to be able to reach the store 
 ReactDOM.render(
   <React.StrictMode>

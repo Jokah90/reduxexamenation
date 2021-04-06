@@ -1,0 +1,56 @@
+.menu {
+    position: relative;
+
+}
+
+.showMenu {
+    display: block;
+    z-index: 1;
+    top: 0px;
+    position: absolute;
+    background: var(--brown);
+    width: 100%;
+    height: 100%;
+    max-width: 375px;
+    max-height: 667px;
+}
+
+.dropDownContainer {
+    display: grid;
+}
+
+ul {
+    margin-block-start: 0;
+    padding: 0;
+}
+
+.dropDownContent {
+    grid-template-rows: repeat(4, 1fr);
+    margin: 235px auto 0;
+    font-size: 32px;
+    font-family: 'PT Serif', serif;
+    list-style-type: none;
+    /* background: #2F2926; */
+}
+
+.navbtn {
+    background: white;
+    height: 32px;
+    padding: 8px;
+    border-radius: 50%;
+    top: 16px;
+    left: 16px;
+    z-index: 2;
+    position: absolute;
+}
+.hideMenu {
+    display: none;
+}
+
+hr {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: none;
+    width: 48px;
+    border-left: none;
+    border-right: none;
+}

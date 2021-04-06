@@ -8,7 +8,7 @@ body {
     align-items: center;
 }
 
-h1 {
+.menu h1 {
   width: 311px;
   height: 60px;
   top: 119px;

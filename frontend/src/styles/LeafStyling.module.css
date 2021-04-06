@@ -1,0 +1,9 @@
+.gridItemHeader,
+.gridItemFooter {
+    margin: 0;
+}
+
+.gridItemFooter {
+    margin-top: 3rem;
+    margin-bottom: -.25rem;
+}
