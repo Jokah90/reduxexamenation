@@ -1,9 +1,16 @@
-import React from 'react'
+import React from 'react';
 
-const Menu = () => {
-    return ( 
-        <h1>Menu</h1>
-     );
+class Menu extends React.Component {
+  componentDidMount() {
+    const apiUrl = 'http://localhost:8080/api/menu';
+    fetch(apiUrl)
+      .then((response) => response.json())
+      .then((data) => console.log('This is your data', data));
+  }
+  render() {
+    return (
+        <h1>kolla konsolen det existerar ett api, wow :D</h1>
+    )
+  }
 }
- 
 export default Menu;

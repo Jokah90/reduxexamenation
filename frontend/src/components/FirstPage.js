@@ -1,9 +1,11 @@
-import React from 'react'
+import { Link } from 'react-router-dom';
 
 const FirstPage = () => {
-    return ( 
-        <h1>FirstPage</h1>
-     );
+  return (
+    <Link to="/menu">
+    <h1>Hello from LandingPage</h1>
+    </Link>
+  )
 }
- 
+
 export default FirstPage;
