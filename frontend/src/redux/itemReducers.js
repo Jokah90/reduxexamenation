@@ -9,6 +9,10 @@ const itemReducer = (state = initialState, action) => {
                 ...state,
                 order: [...state.order, action.payload]
             }
+            default:
+                return {
+                    ...state
+                }
     }
 }
 

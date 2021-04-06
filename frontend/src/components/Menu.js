@@ -1,16 +1,33 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
-class Menu extends React.Component {
-  componentDidMount() {
+  const Menu = () =>  {
+    //set useState "initial state to an empty array"
+    const [data, setData] = useState([]);
+    //save backend URL
     const apiUrl = 'http://localhost:8080/api/menu';
-    fetch(apiUrl)
+    //useEffect updates the object
+    useEffect(() => {
+      fetch(apiUrl)
       .then((response) => response.json())
-      .then((data) => console.log('This is your data', data));
-  }
-  render() {
+      .then(data => setData(data.beans));
+      
+    }, [])
+  
     return (
-        <h1>kolla konsolen det existerar ett api, wow :D</h1>
+        <div>
+          <ul>
+          {data.map((element) => { //mapping saved API in data and render it with the argument with title frrom json
+            return (
+            <li>{element.title}</li>
+            )
+          })}
+          </ul>
+         
+        </div>
+        
     )
-  }
+  
 }
 export default Menu;
+
+
