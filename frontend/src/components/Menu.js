@@ -41,7 +41,7 @@ const Menu = (props) => {
               <button onClick={() => handleClick(element)}>+</button>
               <h3>{element.title}</h3>
               <p>{element.desc}</p>
-              <p>{element.price}</p>
+              <p>{element.price}kr</p>
             </section>
           )
 
@@ -56,7 +56,7 @@ const Menu = (props) => {
 function mapStateToProps(state) {
 
   console.log('PRODEV', state)
-  return 
+  return {}
 
 }
 //skickar ny info till redux 

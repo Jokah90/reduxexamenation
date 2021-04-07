@@ -1,21 +1,20 @@
 .showMenuCart {
-  display: block;
-  z-index: 1;
-  top: 0px;
+  right: 17px;
+  z-index: 2;
+  top: 68px;
   position: absolute;
-  width: 100%;
-  height: 100%;
-  max-width: 375px;
-  max-height: 667px;
+  padding: 3rem;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.25);
+  border-radius: 3px;
+ 
 }
 
 .cartBtn {
   background: black;
-  height: 32px;
-  padding: 13px;
+  height: 30px;
+  padding: 13px 16px;
   border-radius: 50%;
-  top: 16px;
-  left: 16px;
   z-index: 2;
   position: absolute;
   left: 79.73%;

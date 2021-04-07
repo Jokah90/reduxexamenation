@@ -2,8 +2,13 @@ import React, { useState } from "react";
 import bag from "../assets/svg/bag.svg";
 import { connect } from "react-redux";
 import styles from "../styles/Cart.module.css";
+import arrowUp from '../assets/svg/arrow-up.svg';
+import {useDispatch } from 'react-redux';
+
+
 
 const Cart = (props) => {
+  
   const [visible, setVisible] = useState(false);
   const toggleCart = () => {
     setVisible(!visible);
@@ -26,13 +31,15 @@ const Cart = (props) => {
               <section>
                 <h3>{element.title}</h3>
                 <p>{element.desc}</p>
-                <p>{element.price}</p>
-                <p>Total................... kr</p>
-                <p>inkl moms + drönarleverans</p>
+                <p>{element.price}kr</p>
+                {/* <button onClick={() => increase()}><img src={arrowUp} alt="Increase button" /></button>
+                <button onClick={() => handleClick(element)}>-</button> */}
               </section>
             );
           })}
 
+          <p>total</p>
+          <p>inkl moms + drönarleverans</p>
           <button className={styles.button} type="submit">
             Take my money!
           </button>
@@ -42,10 +49,26 @@ const Cart = (props) => {
   );
 };
 
+// const mapDispatchToProps = (dispatch, ownProps) => {
+//   const dispatch = useDispatch();
+
+//   const { id, amount } = ownProps
+
+//   // Arrowfunction för att inte köras vis onload
+//   return {
+
+//       remove: () => dispatch({ type: REMOVE, payload: { id } }),
+//       increase: () => dispatch({ type: INCREASE, payload: { id, } }),
+//       decrease: () => dispatch({ type: DECREASE, payload: { id, amount } })
+
+//   }
+// }
+
 function mapStateToProps(state) {
+  const { cart } = state
+  console.log(cart)
   return {
     items: state.cart,
   };
 }
-
 export default connect(mapStateToProps)(Cart);

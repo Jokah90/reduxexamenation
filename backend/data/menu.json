@@ -4,38 +4,38 @@
             "id": 1,
             "title": "Bryggkaffe",
             "desc": "Bryggd på månadens bönor",
-            "price": "49 kr"
+            "price": 49 
     
         },
         {
             "id": 2,
             "title": "Caffé Doppio",
             "desc": "Bryggd på månadens bönor",
-            "price": "49 kr" 
+            "price": 49 
         },
         {
             "id": 3,
-            "title": "Cappucciono",
+            "title": "Cappuccino",
             "desc": "Bryggd på månadens bönor",
-            "price": "49 kr" 
+            "price": 49 
         },
         {
             "id": 4,
             "title": "Latte Macchiato",
             "desc": "Bryggd på månadens bönor",
-            "price": "49 kr" 
+            "price": 49 
         },
         {
             "id": 5,
             "title": "Kaffe Latte",
             "desc": "Bryggd på månadens bönor",
-            "price": "49 kr" 
+            "price": 49
         },
         {
             "id": 6,
             "title": "Cortado",
             "desc": "Bryggd på månadens bönor",
-            "price": "39 kr" 
+            "price": 39
         }
     ]
 }
