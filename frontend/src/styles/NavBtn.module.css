@@ -1,6 +1,5 @@
 .menu {
-    position: relative;
-
+    
 }
 
 .showMenu {
@@ -30,7 +29,7 @@ ul {
     font-size: 32px;
     font-family: 'PT Serif', serif;
     list-style-type: none;
-    /* background: #2F2926; */
+    background: #2F2926;
 }
 
 .navbtn {

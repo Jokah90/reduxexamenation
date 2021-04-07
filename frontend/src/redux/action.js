@@ -12,3 +12,17 @@ export const removeCoffee = (coffee) => {
     }
 }
 
+export const addInc = (coffee) => {
+    return {
+        type: 'INC_COFFEE',
+        payload: coffee
+    }
+}
+
+export const addDec = (coffee) => {
+    return {
+        type: 'DEC_COFFEE',
+        payload: coffee
+    }
+}
+

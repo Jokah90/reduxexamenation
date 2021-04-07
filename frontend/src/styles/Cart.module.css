@@ -1,0 +1,40 @@
+.showMenuCart {
+  display: block;
+  z-index: 1;
+  top: 0px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  max-width: 375px;
+  max-height: 667px;
+}
+
+.cartBtn {
+  background: black;
+  height: 32px;
+  padding: 13px;
+  border-radius: 50%;
+  top: 16px;
+  left: 16px;
+  z-index: 2;
+  position: absolute;
+  left: 79.73%;
+  right: 4.27%;
+  top: 1.91%;
+  bottom: 90.94%;
+  background: #2f2926;
+}
+
+.hideMenuCart {
+  display: none;
+}
+
+.button {
+  color: white;
+  width: 248px;
+  height: 55px;
+  left: 64px;
+  top: 542px;
+  background: #2f2926;
+  border-radius: 50px;
+}

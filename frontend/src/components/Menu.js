@@ -20,16 +20,20 @@ const Menu = (props) => {
   }, []);
 
   function handleClick(element) {
-    props.banana(element)
+    props.action(element)
   }
 
   return (
     <section className={styles.menu}>
       <Header />
-      <Nav />
-      <Cart />
+      <header className={styles.headerContainer}>
+      
+        <Nav />
+        <Cart />
+      </header>
+
       <h1>Meny</h1>
-      <ul className={styles.orders}>
+      <section className={styles.orders}>
         {data.map((element, index) => {
           //mapping saved API in data and render it with the argument with title from json
           return (
@@ -42,7 +46,7 @@ const Menu = (props) => {
           )
 
         })}
-      </ul>
+      </section>
       <Footer />
     </section>
   );
@@ -52,14 +56,14 @@ const Menu = (props) => {
 function mapStateToProps(state) {
 
   console.log('PRODEV', state)
-  return {}
+  return 
 
 }
 //skickar ny info till redux 
 function mapDispatchToProps(dispatch) {
 
   return {
-    banana: (element) => dispatch(addCoffee(element))
+    action: (element) => dispatch(addCoffee(element))
   }
 
 }
