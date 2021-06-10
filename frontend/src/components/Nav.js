@@ -20,25 +20,25 @@ const Nav = () => {
                     <ul className={styles.dropDownContent}>
                         <Link to='/menu'>
                             <li>
-                                Meny
+                                <p>Meny</p>
                     </li>
                         </Link>
                         <hr />
                         <Link to='/about'>
                             <li>
-                                Vårt kaffe
+                                <p>Vårt kaffe</p>
                     </li>
                         </Link>
                         <hr />
                         <Link to='/profile'>
                             <li>
-                                Min profil
+                                <p>Min profil</p>
                     </li>
                         </Link>
                         <hr />
                         <Link to='/status'>
                             <li>
-                                Orderstatus
+                                <p>Orderstatus</p>
                     </li>
                         </Link>
                     </ul>

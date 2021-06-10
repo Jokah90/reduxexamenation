@@ -1,21 +1,26 @@
 import React, { useState } from "react";
 import bag from "../assets/svg/bag.svg";
-import { connect } from "react-redux";
+import { connect, useSelector } from "react-redux";
 import styles from "../styles/Cart.module.css";
-import arrowUp from '../assets/svg/arrow-up.svg';
-import {useDispatch } from 'react-redux';
-
+import { Link } from "react-router-dom";
 
 
 const Cart = (props) => {
-  
   const [visible, setVisible] = useState(false);
   const toggleCart = () => {
     setVisible(!visible);
   };
 
+  const cart = useSelector((state) => state.cart);
+
+
+  // function handleClick(element) {
+  //   props.action(element);
+  // }
+
   return (
     <section>
+      <p className={styles.cartIcon}>{cart.length}</p>
       <img
         src={bag}
         alt="cart menu button"
@@ -30,19 +35,18 @@ const Cart = (props) => {
             return (
               <section>
                 <h3>{element.title}</h3>
-                <p>{element.desc}</p>
                 <p>{element.price}kr</p>
-                {/* <button onClick={() => increase()}><img src={arrowUp} alt="Increase button" /></button>
-                <button onClick={() => handleClick(element)}>-</button> */}
               </section>
             );
           })}
 
-          <p>total</p>
+          <p>Total</p>
           <p>inkl moms + drönarleverans</p>
-          <button className={styles.button} type="submit">
-            Take my money!
-          </button>
+          <Link to="status">
+            <button className={styles.button} type="submit">
+              Take my money!
+            </button>
+          </Link>
         </section>
       </section>
     </section>
@@ -65,8 +69,8 @@ const Cart = (props) => {
 // }
 
 function mapStateToProps(state) {
-  const { cart } = state
-  console.log(cart)
+  const { cart } = state;
+  console.log(cart);
   return {
     items: state.cart,
   };

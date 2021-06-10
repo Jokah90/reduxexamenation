@@ -4,8 +4,8 @@ import Footer from "./Footer";
 import Header from "./Header";
 import Nav from "../components/Nav.js";
 import { connect } from "react-redux";
-import { addCoffee } from '../redux/action';
-import Cart from './Cart.js';
+import { addCoffee } from "../redux/action";
+import Cart from "./Cart.js";
 
 const Menu = (props) => {
   //set useState "initial state to an empty array"
@@ -20,14 +20,13 @@ const Menu = (props) => {
   }, []);
 
   function handleClick(element) {
-    props.action(element)
+    props.action(element);
   }
 
   return (
     <section className={styles.menu}>
       <Header />
       <header className={styles.headerContainer}>
-      
         <Nav />
         <Cart />
       </header>
@@ -37,14 +36,15 @@ const Menu = (props) => {
         {data.map((element, index) => {
           //mapping saved API in data and render it with the argument with title from json
           return (
-            <section>
+            <section className={styles.menuOrders}>
               <button onClick={() => handleClick(element)}>+</button>
-              <h3>{element.title}</h3>
-              <p>{element.desc}</p>
+              <div>
+                <h3>{element.title}</h3>
+                <p>{element.desc}</p>
+              </div>
               <p>{element.price}kr</p>
             </section>
-          )
-
+          );
         })}
       </section>
       <Footer />
@@ -54,18 +54,14 @@ const Menu = (props) => {
 
 //plocka ut från redux
 function mapStateToProps(state) {
-
-  console.log('PRODEV', state)
-  return {}
-
+  console.log("PRODEV", state);
+  return {};
 }
-//skickar ny info till redux 
+//skickar ny info till redux
 function mapDispatchToProps(dispatch) {
-
   return {
-    action: (element) => dispatch(addCoffee(element))
-  }
-
+    action: (element) => dispatch(addCoffee(element)),
+  };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Menu);

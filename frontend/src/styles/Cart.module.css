@@ -10,16 +10,32 @@
  
 }
 
+.cartIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 1.3rem;
+  z-index: 3;
+  top: -.3rem;
+  border-radius: 50%;
+  height: 1.5rem;
+  width: 1.5rem;
+  font-size: .8rem;
+  color: white;
+  background-color: red;
+}
+
 .cartBtn {
   background: black;
   height: 30px;
-  padding: 13px 16px;
+  padding: 10px 16px;
   border-radius: 50%;
   z-index: 2;
   position: absolute;
-  left: 79.73%;
+  left: 78.73%;
   right: 4.27%;
-  top: 1.91%;
+  top: 1.98%;
   bottom: 90.94%;
   background: #2f2926;
 }
