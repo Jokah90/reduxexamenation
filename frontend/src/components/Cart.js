@@ -1,26 +1,42 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import bag from "../assets/svg/bag.svg";
-import { connect, useSelector } from "react-redux";
+import { connect, useDispatch } from "react-redux";
 import styles from "../styles/Cart.module.css";
 import { Link } from "react-router-dom";
+import ArticleInCart from "./ArticleInCart";
+import { GET_TOTAL } from "../redux/action";
 
 
-const Cart = (props) => {
+const Cart = ({ cart = [], price, count, totalPrice }) => {
+
+  const [articlesInCart, setArticlesInCart] = useState(0)
   const [visible, setVisible] = useState(false);
+
   const toggleCart = () => {
     setVisible(!visible);
   };
 
-  const cart = useSelector((state) => state.cart);
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch({ type: GET_TOTAL, price: price, count: count })
+    ArticlesInCart()
+  })
+
+  // Funktion för att räkna ut antal artiklar i korg
+  const ArticlesInCart = () => {
+    let articles = 0;
+    cart.forEach(item => {
+      articles = articles + item.count
+    })
+    setArticlesInCart(articles)
+  }
 
 
-  // function handleClick(element) {
-  //   props.action(element);
-  // }
+  // Samma som i förra bara att du använder en annan action och istället för payload
 
   return (
     <section>
-      <p className={styles.cartIcon}>{cart.length}</p>
+      <p className={styles.cartIcon}>{articlesInCart}</p>
       <img
         src={bag}
         alt="cart menu button"
@@ -31,17 +47,13 @@ const Cart = (props) => {
         className={visible === true ? styles.showMenuCart : styles.hideMenuCart}
       >
         <section className={styles.dropDownContainer}>
-          {props.items.map((element) => {
-            return (
-              <section>
-                <h3>{element.title}</h3>
-                <p>{element.price}kr</p>
-              </section>
-            );
+          {cart.map((element) => {
+            return <ArticleInCart key={element.id} {...element} />
           })}
 
-          <p>Total</p>
+          <p>{`Totalt: ${totalPrice} kr`}</p>
           <p>inkl moms + drönarleverans</p>
+
           <Link to="status">
             <button className={styles.button} type="submit">
               Take my money!
@@ -53,26 +65,13 @@ const Cart = (props) => {
   );
 };
 
-// const mapDispatchToProps = (dispatch, ownProps) => {
-//   const dispatch = useDispatch();
-
-//   const { id, amount } = ownProps
-
-//   // Arrowfunction för att inte köras vis onload
-//   return {
-
-//       remove: () => dispatch({ type: REMOVE, payload: { id } }),
-//       increase: () => dispatch({ type: INCREASE, payload: { id, } }),
-//       decrease: () => dispatch({ type: DECREASE, payload: { id, amount } })
-
-//   }
-// }
-
-function mapStateToProps(state) {
+// Men den här behöver vi
+const mapStateToProps = state => {
   const { cart } = state;
   console.log(cart);
   return {
-    items: state.cart,
+    totalPrice: state.total,
+    cart
   };
 }
 export default connect(mapStateToProps)(Cart);

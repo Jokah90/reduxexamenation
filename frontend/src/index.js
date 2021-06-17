@@ -9,16 +9,23 @@ import itemReducer from './redux/itemReducers';
 
 
 //creating my store
-// const store = createStore(itemReducer);
+// Här initierar vi store
+const initialStore = {
+  cart: [],
+}
+
+
 const store = createStore(
   itemReducer, /* preloadedState, */
+  // Skickar med den i createStore
+  initialStore,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 //Envelop my app.js with the provider to be able to reach the store 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-    <App />
+      <App />
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')
