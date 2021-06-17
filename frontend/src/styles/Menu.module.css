@@ -2,24 +2,55 @@ body {
   background: #f3e4e1;
 }
 
-.menu {
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  height: 100vh;
-  margin: 0;
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu h1 {
+  margin: 0 auto;
+  width: 311px;
+  height: 60px;
+  top: 119px;
+  text-align: center;
+  color: #2f2926;
 }
 
 .orders {
-  text-align: left;
+  display: flex;
+  flex-direction: column;
 }
 
 .menuOrders {
   display: flex;
-  flex-direction: row;
-  align-items: center;
   justify-content: space-evenly;
-  max-height: 5.5rem;
+  align-content: center;
+  text-align: left;
+  align-items: baseline;
+  gap: 0.5rem;
+  height: 5.4rem;
+}
+
+.menuOrders > p {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 23px;
+
+}
+
+.menuOrders h3 {
+  font-weight: bold;
+  font-size: 23px;
+  line-height: 100%;
+  margin: 0;
+}
+
+div > p {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  color: #2f2926b6;
+  line-height: 70%;
 }
 
 .menuOrders button {
@@ -33,19 +64,4 @@ body {
   background: var(--brown);
   align-items: center;
   justify-content: center;
-}
-
-.headerContainer {
-  display: flex;
-  justify-content: space-between;
-}
-
-.menu h1 {
-  margin: 0 auto;
-  width: 311px;
-  height: 60px;
-  top: 119px;
-
-  text-align: center;
-  color: #2f2926;
 }

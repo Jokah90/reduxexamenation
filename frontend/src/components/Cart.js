@@ -32,7 +32,7 @@ const Cart = ({ cart = [], price, count, totalPrice }) => {
   }
 
 
-  // Samma som i förra bara att du använder en annan action och istället för payload
+  
 
   return (
     <section>
