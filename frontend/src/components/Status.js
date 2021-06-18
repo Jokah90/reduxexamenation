@@ -1,6 +1,8 @@
 import React from 'react'
 import styles from '../styles/Status.module.css';
 import Drone from '../assets/img/drone.png';
+import { Link } from "react-router-dom";
+
 
 const Status = () => {
     return (
@@ -10,9 +12,11 @@ const Status = () => {
             <h1>Din beställning är påväg!</h1>
             <p><strong>13</strong> minuter</p>
             <div>
+            <Link to="Profile">
             <button className={styles.btn}>Ok, cool!</button>
+            </Link>
             </div>
-
+            
         </section>
     );
 }

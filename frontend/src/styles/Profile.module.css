@@ -2,16 +2,52 @@
   background: #2f2926;
   align-items: center;
   text-align: center;
-  height: 667px;
+  width: 375px;
+  height: 812px;
 }
 
-.logIn {
-  background-color: antiquewhite;
+.logInContainer {
+  position: absolute;
   left: 4.53%;
   right: 4.53%;
   top: 12.29%;
   bottom: 2.88%;
-
+  background: #FFFFFF;
   box-shadow: 0px 0px 32px rgba(0, 0, 0, 0.6);
   border-radius: 3px;
+}
+
+.logIn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.formContainer input {
+  border: 1px solid #2F2926;
+box-sizing: border-box;
+border-radius: 6px;
+background: #FFFFFF;
+
+}
+
+.formContainer button {
+  color: white;
+  width: 248px;
+  height: 55px;
+  background: #2f2926;
+  border-radius: 50px;
+  border: none;
+  font-family: PT Serif;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 120%;
+  margin-bottom: 2rem;
 }

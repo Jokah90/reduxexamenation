@@ -27,7 +27,7 @@ const About = () => {
         </article>
       </section>
     <section className={styles.imgInfo}>
-      <img src={VD} alt="vd img" className={styles.woman} />
+      <img src={VD} alt="image of a woman" className={styles.woman} />
       <h2>Eva Cortado</h2>
       <p>VD & Grundare</p>
       </section>
