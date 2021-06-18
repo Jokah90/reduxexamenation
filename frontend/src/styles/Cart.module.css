@@ -31,8 +31,6 @@
 .showMenuCart {
   left: 4.53%;
   right: 4.53%;
-  bottom: 2.6%;
-  right: 15px;
   z-index: 2;
   top: 68px;
   position: absolute;
@@ -93,18 +91,7 @@
   line-height: 130%;
 }
 
-.button {
-  color: white;
-  width: 248px;
-  height: 55px;
-  background: #2f2926;
-  border-radius: 50px;
-  border: none;
-  font-family: PT Serif;
-  font-weight: bold;
-  font-size: 24px;
-  line-height: 120%;
-}
+
 
 .valueChange {
   display: flex;
@@ -128,6 +115,20 @@
 .orderBtnTwo {
   border: none;
   background-color: #ffffff;
+}
+
+.button {
+  color: white;
+  width: 248px;
+  height: 55px;
+  background: #2f2926;
+  border-radius: 50px;
+  border: none;
+  font-family: PT Serif;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 120%;
+  margin-bottom: 2rem;
 }
 
 .totalPrice  {
