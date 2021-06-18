@@ -6,33 +6,28 @@ import { Link } from "react-router-dom";
 import ArticleInCart from "./ArticleInCart";
 import { GET_TOTAL } from "../redux/action";
 
-
 const Cart = ({ cart = [], price, count, totalPrice }) => {
-
-  const [articlesInCart, setArticlesInCart] = useState(0)
+  const [articlesInCart, setArticlesInCart] = useState(0);
   const [visible, setVisible] = useState(false);
 
   const toggleCart = () => {
     setVisible(!visible);
   };
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   useEffect(() => {
-    dispatch({ type: GET_TOTAL, price: price, count: count })
-    ArticlesInCart()
-  })
+    dispatch({ type: GET_TOTAL, price: price, count: count });
+    ArticlesInCart();
+  });
 
   // Funktion för att räkna ut antal artiklar i korg
   const ArticlesInCart = () => {
     let articles = 0;
-    cart.forEach(item => {
-      articles = articles + item.count
-    })
-    setArticlesInCart(articles)
-  }
-
-
-  
+    cart.forEach((item) => {
+      articles = articles + item.count;
+    });
+    setArticlesInCart(articles);
+  };
 
   return (
     <section>
@@ -46,32 +41,42 @@ const Cart = ({ cart = [], price, count, totalPrice }) => {
       <section
         className={visible === true ? styles.showMenuCart : styles.hideMenuCart}
       >
+        <h2>Din beställning</h2>
+
         <section className={styles.dropDownContainer}>
           {cart.map((element) => {
-            return <ArticleInCart key={element.id} {...element} />
+            return (
+              <div className={styles.coffeList}>
+                <ArticleInCart key={element.id} {...element} />
+              </div>
+            )
           })}
 
-          <p>{`Totalt: ${totalPrice} kr`}</p>
-          <p>inkl moms + drönarleverans</p>
+      
+            <p className={styles.totalPrice}>Total<span></span>{`${totalPrice} kr`}</p>
+          
 
-          <Link to="status">
-            <button className={styles.button} type="submit">
-              Take my money!
-            </button>
-          </Link>
+
+          <p className={styles.delivery}>inkl moms + drönarleverans</p>
+
+
         </section>
+        <Link to="status">
+          <button className={styles.button} type="submit">
+            Take my money!
+          </button>
+        </Link>
       </section>
     </section>
   );
 };
 
-// Men den här behöver vi
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   const { cart } = state;
   console.log(cart);
   return {
     totalPrice: state.total,
-    cart
+    cart,
   };
-}
+};
 export default connect(mapStateToProps)(Cart);
